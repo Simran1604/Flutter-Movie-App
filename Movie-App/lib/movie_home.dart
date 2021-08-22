@@ -3,13 +3,11 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-// ignore: import_of_legacy_library_into_null_safe
 import 'package:url_launcher/url_launcher.dart';
 
 
 import 'movie-info.dart';
 final List<Info> infoList=Info.getinfo();
-// ignore: camel_case_types
 class movies extends StatelessWidget{
   
   
@@ -83,16 +81,13 @@ class movies extends StatelessWidget{
                             ),),
                          ),
                           
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Expanded(
+                           Expanded(
                               child: Text("${infoList[index].runtime}",style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color:Colors.grey.shade500,
                                 fontSize: 12
                               ),),
-                            ),
-                          ),
+                           ),
                           Expanded(
                             child: Text("${infoList[index].rated}",style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -138,31 +133,6 @@ class movies extends StatelessWidget{
               movieCard(infoList[index],context),
               movieImage(infoList[index].images[0]),
               ]);
-
-        // return Card(
-        //   elevation: 4.0,
-        //   color: Colors.white,
-        //   child: ListTile(
-        //     leading: CircleAvatar(
-        //       child:Container(
-        //         width: 400,
-        //         height: 400,
-        //         decoration:BoxDecoration(
-        //           image: DecorationImage(image: NetworkImage(infoList[index].images[0]),
-        //           fit: BoxFit.cover),
-        //           borderRadius: BorderRadius.circular(12),
-        //         ),
-        //       )
-        //     ),
-        //     title:Text(infoList.elementAt(index).title),
-        //     subtitle: Text("${infoList[index].genre}"),
-        //     onTap: () {
-        //       Navigator.push(context, MaterialPageRoute(builder: (context)=>MovieDetails(movieName:infoList.elementAt(index).title,
-        //       )));
-        //     },
-        //     trailing: Text("...")
-        //   ),
-        // );
         
       }),
     );
@@ -188,26 +158,22 @@ class MovieDetails extends StatelessWidget {
         
           children:[
             Thumbnail(thumbnail: infoList[index].images[0],index: index,),
-            Expanded(child:HeaderWithPoster(index:index)),
+            Row(
+              children: [
+                Expanded(child:HeaderWithPoster(index:index)),
+              ],
+            ),
              Line(),
-            Expanded(child: Details(index: index)),
+            Row(
+              children: [
+                Expanded(child: Details(index: index)),
+              ],
+            ),
             Line(),
             Images(posters: infoList[index].images),
           ]  
     ),
     );
-    
-      // body: Center(
-      //   child: Container(
-      //     child:RaisedButton(
-      //       child:Text("Go back to $movieName",
-      //       textAlign: TextAlign.center,),
-      //       onPressed:(){
-      //         Navigator.pop(context);
-      //       }
-      //     ),
-      //   ),
-      // ),
     
   }
 }
