@@ -358,25 +358,6 @@ class HeaderWithPoster extends StatelessWidget {
                                          }));
                                        },
                                      ),
-                                          //async {
-                                    // await showDialog(
-                                    // context: context,
-                                    // builder: (_) => Dialog(
-                                    //   elevation: 2,
-                                    //    child: Container(
-                                    //         width: 200,
-                                    //         height: 200,
-                                    //         decoration: BoxDecoration(
-                                    //         image: DecorationImage(
-                                    //         image: NetworkImage(posters[index]),
-                                    //         fit: BoxFit.cover
-                                    //       ),
-                                       
-                                    //      ),
-                                    //    ),
-                               
-                                    //   ),
-                                    //  );}
                                    ),
                                ),
                                )
