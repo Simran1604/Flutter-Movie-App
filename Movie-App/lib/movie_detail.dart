@@ -8,7 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'package:movies/info.dart';
 
-import 'pic.dart';
+import 'movie_pictures.dart';
 
 final List<Info> infoList=Info.getinfo();
 
